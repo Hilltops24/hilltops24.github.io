@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilltops Fitness Challenge: Team Lion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 20px;
+            background-image: url('Images/Lion background.jpg');
+            background-size: cover;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #0e0c0c;
+            padding: 8px;
+            text-align: left;
+        }
+        input[type="number"] {
+            width: 100px;
+        }
+        .total-points {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .selectors {
+            margin-bottom: 20px;
+        }
+        .selectors label {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form id="fitness-form" method="POST" action="https://formsubmit.co/hilltopsnorwich@gmail.com" target="_blank">
+        <h1>Hilltops Fitness Challenge: Team Lion</h1>
+        <div class="selectors">
+            <label for="names">Select Team:</label>
+            <select id="names" name="Name">
+                <option value="Team Lion">Team Lion</option>
+            </select>
+        </div>
+
+        <div class="selectors">
+            <label for="Team">Select Name:</label>
+            <select id="Team" name="Team">
+                <option value="Emily">Emily</option>
+                <option value="Kate">Kate</option>
+                <option value="Lauren">Lauren</option>
+                <option value="Mairead">Mairead</option>
+                <option value="Sian">Sian</option>
+                <option value="Sonia">Sonia</option>
+            </select>
+            <label for="dates">Select Date:</label>
+            <select id="dates" name="Date">
+                <option value="2024-08-02">2nd August 2024</option>
+                <option value="2024-08-03">3rd August 2024</option>
+                <option value="2024-08-04">4th August 2024</option>
+                <option value="2024-08-05">5th August 2024</option>
+                <option value="2024-08-06">6th August 2024</option>
+                <option value="2024-08-07">7th August 2024</option>
+                <option value="2024-08-08">8th August 2024</option>
+                <option value="2024-08-09">9th August 2024</option>
+                <option value="2024-08-10">10th August 2024</option>
+                <option value="2024-08-11">11th August 2024</option>
+                <option value="2024-08-12">12th August 2024</option>
+                <option value="2024-08-13">13th August 2024</option>
+                <option value="2024-08-14">14th August 2024</option>
+                <option value="2024-08-15">15th August 2024</option>
+                <option value="2024-08-16">16th August 2024</option>
+            </select>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Points Per Unit</th>
+                    <th>Unit</th>
+                    <th>Amount</th>
+                    <th>Total Points</th>
+                </tr>
+            </thead>
+            <tbody id="activity-table">
+                <tr>
+                    <td>Running</td>
+                    <td>3</td>
+                    <td>mile</td>
+                    <td><input type="number" name="RunningAmount" data-points="3" data-unit="mile" class="activity-input"></td>
+                    <td><input type="number" name="RunningTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Walking</td>
+                    <td>1.5</td>
+                    <td>mile</td>
+                    <td><input type="number" name="WalkingAmount" data-points="1.5" data-unit="mile" class="activity-input"></td>
+                    <td><input type="number" name="WalkingTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Cycling</td>
+                    <td>1</td>
+                    <td>mile</td>
+                    <td><input type="number" name="CyclingAmount" data-points="1" data-unit="mile" class="activity-input"></td>
+                    <td><input type="number" name="CyclingTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Lakenham Sessions</td>
+                    <td>10</td>
+                    <td>Per session</td>
+                    <td><input type="number" name="LakenhamSessionsAmount" data-points="10" data-unit="Per Session" class="activity-input"></td>
+                    <td><input type="number" name="LakenhamSessionsTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Water Sports</td>
+                    <td>2</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="WaterSportsAmount" data-points="2" data-unit="15 minutes" class="activity-input"></td>
+                    <td><input type="number" name="WaterSportsTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Weights/Resistance Training</td>
+                    <td>1</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="WeightsAmount" data-points="1" data-unit="15 minutes" class="activity-input"></td>
+                    <td><input type="number" name="WeightsTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>HIIT/Circuits</td>
+                    <td>2</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="HIITCircuitsAmount" data-points="2" data-unit="15 minutes" class="activity-input"></td>
+                    <td><input type="number" name="HIITCircuitsTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Cardio Machines</td>
+                    <td>2</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="CardioMachinesAmount" data-points="2" data-unit="15 minutes" class="activity-input"></td>
+                    <td><input type="number" name="CardioMachinesTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Indoor Bike</td>
+                    <td>0.5</td>
+                    <td>1 mile</td>
+                    <td><input type="number" name="IndoorBikeAmount" data-points="0.5" data-unit="1 mile" class="activity-input"></td>
+                    <td><input type="number" name="IndoorBikeTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Aerobics/Classes</td>
+                    <td>2</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="AerobicsClassesAmount" data-points="2" data-unit="15 minutes" class="activity-input"></td>
+                    <td><input type="number" name="AerobicsClassesTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>HIIT</td>
+                    <td>2</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="HIITAmount" data-points="2" data-unit="15 minutes" class="activity-input"></td>
+                    <td><input type="number" name="HIITTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Yoga</td>
+                    <td>4</td>
+                    <td>30 minutes</td>
+                    <td><input type="number" name="YogaAmount" data-points="4" data-unit="30 minutes" class="activity-input"></td>
+                    <td><input type="number" name="YogaTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Pilates</td>
+                    <td>4</td>
+                    <td>30 minutes</td>
+                    <td><input type="number" name="PilatesAmount" data-points="4" data-unit="30 minutes" class="activity-input"></td>
+                    <td><input type="number" name="PilatesTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Dancing</td>
+                    <td>2</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="Dancing" data-points="2" data-unit="15 minutes" class="activity-input"></td>
+                    <td><input type="number" name="DancingTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Team Sports</td>
+                    <td>2</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="TeamSportsAmount" data-points="2" data-unit="minutes" class="activity-input"></td>
+                    <td><input type="number" name="TeamSportsTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Raquet Sports</td>
+                    <td>2</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="RaquetSportsAmount" data-points="2" data-unit="minutes" class="activity-input"></td>
+                    <td><input type="number" name="RaquetSportsTotalPoints" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Martial Arts</td>
+                    <td>2</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="MartialArtsAmount" data-points="2" data-unit="minutes" class="activity-input"></td>
+                    <td><input type="number" name="MartialArtsAmount" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Climbing</td>
+                    <td>2</td>
+                    <td>15 minutes</td>
+                    <td><input type="number" name="Climbing" data-points="2" data-unit="minutes" class="activity-input"></td>
+                    <td><input type="number" name="Climbing" readonly class="total-points-input"></td>
+                </tr>
+                <tr>
+                    <td>Skating</td>
+                    <td>2</td>
+                    <td>minutes</td>
+                    <td><input type="number" name="SkatingAmount" data-points="2" data-unit="minutes" class="activity-input"></td>
+                    <td><input type="number" name="SkatingAmount" readonly class="total-points-input"></td>
+                </tr>
+                <div>
+                    <tr> 
+                        <td colspan="5" ><strong> Bonus Points</strong></td>
+
+                        <tr>
+                            <td>Parkrun Bonus</td>
+                            <td>6</td>
+                            <td>Per Parkrun</td>
+                            <td><input type="number" max= 1 name="ParkrunBonusAmount" data-points="6" data-unit="perrun" class="activity-input"></td>
+                            <td><input type="number" name="ParkrunBonusAmount" readonly class="total-points-input"></td>
+                        </tr> 
+                        <tr>
+                            <td>10k Steps</td>
+                            <td>4</td>
+                            <td>per 10k</td>
+                            <td><input type="number" name="StepsAmount" data-points="4" data-unit="per10k" class="activity-input"></td>
+                            <td><input type="number" name="StepsAmount" readonly class="total-points-input"></td>
+                        </tr>  
+                        <tr>
+                            <td>5k Bonus (running only)</td>
+                            <td>2</td>
+                            <td>per 5k</td>
+                            <td><input type="number" name="5kbonusAmount" data-points="2" data-unit="per5k" class="activity-input"></td>
+                            <td><input type="number" name="5kbonusAmount" readonly class="total-points-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Runnning with a Teammate</td>
+                            <td>2</td>
+                            <td>Once per day</td>
+                            <td><input type="number" max="1" name="RunningwithTeammate" data-points="2" data-unit="minutes" class="activity-input"></td>
+                            <td><input type="number" name="RunningwithTeammateAmount" readonly class="total-points-input"></td>
+                        </tr>
+                        <div>
+                        <td colspan="5" ><strong> To be scored on the last day only</strong></td>
+                        <tr>
+                            <td>10k Every Weekday (10 days in total)</td>
+                            <td>10</td>
+                            <td>10k Steps Every weekday</td>
+                            <td><input type="number" max="1" name="10k Every Weekday" data-points="10" data-unit="10kEveryWeekday" class="activity-input"></td>
+                            <td><input type="number" name="10kEveryWeekdayAmount" readonly class="total-points-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Consistency is key</td>
+                            <td>5</td>
+                            <td>Record Points Everyday</td>
+                            <td><input type="number" max="1" name="Record Points Everyday" data-points="5" data-unit="Record Everyday" class="activity-input"></td>
+                            <td><input type="number" name="Record Points Everyday Amount" readonly class="total-points-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Multisport Hero: record 5 different sports over Hilltops</td>
+                            <td>5</td>
+                            <td>Record 5 different sports</td>
+                            <td><input type="number" max="1" name="MultisportHero" data-points="5" data-unit="minutes" class="activity-input"></td>
+                            <td><input type="number" name="MultisportHero" readonly class="total-points-input"></td>
+                        </tr>
+            </tbody>
+        </table>
+        <div>
+            <label for="submission-total">Total Points for this submission: </label>
+            <input type="number" id="submission-total" name="SubmissionTotalPoints" class="submission-total-input" readonly>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const activityInputs = document.querySelectorAll('.activity-input');
+            const totalPointsInputs = document.querySelectorAll('.total-points-input');
+            const submissionTotalInput = document.querySelector('.submission-total-input');
+
+            function calculateTotalPoints() {
+                let totalPoints = 0;
+
+                activityInputs.forEach((input, index) => {
+                    const pointsPerUnit = parseFloat(input.dataset.points);
+                    const amount = parseFloat(input.value) || 0;
+                    const totalActivityPoints = pointsPerUnit * amount;
+
+                    totalPointsInputs[index].value = totalActivityPoints.toFixed(2);
+                    totalPoints += totalActivityPoints;
+                });
+
+                submissionTotalInput.value = totalPoints.toFixed(2);
+            }
+
+            activityInputs.forEach(input => {
+                input.addEventListener('input', calculateTotalPoints);
+            });
+
+            // Initial calculation
+            calculateTotalPoints();
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
